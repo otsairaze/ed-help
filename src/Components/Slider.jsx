@@ -1,6 +1,8 @@
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+
+import "swiper/css";
+import SliderCardFirst from "./SliderCard/SliderCardFirst";
 
 const Slider = () => {
   return (
@@ -13,16 +15,16 @@ const Slider = () => {
       onSwiper={(swiper) => console.log(swiper)}
     >
       <SwiperSlide>
-        <img src="./img/GridCard/1.svg" alt="" />
+        <SliderCardFirst />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="./img/GridCard/1.svg" alt="" />
+        <SliderCardFirst />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="./img/GridCard/1.svg" alt="" />
+        <SliderCardFirst />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="./img/GridCard/1.svg" alt="" />
+        <SliderCardFirst />
       </SwiperSlide>
     </Swiper>
   );

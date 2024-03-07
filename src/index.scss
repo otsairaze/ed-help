@@ -287,5 +287,21 @@
         margin-top: 23px;
       }
     }
+
+    .card-block {
+      box-shadow: 0px 17px 56px rgba(110, 63, 244, 0.1);
+      border-radius: 44px;
+      max-width: 764px;
+      padding-block: 70px;
+      padding-inline: 30px;
+      margin-top: 76px;
+      margin-left: 50px;
+      h3 {
+        max-width: 400px;
+      }
+      p {
+        max-width: 430px;
+      }
+    }
   }
 }

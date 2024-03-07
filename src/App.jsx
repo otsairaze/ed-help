@@ -1,11 +1,8 @@
-import { useState } from "react";
 import "./index.scss";
 import "macro-css";
 import Slider from "./Components/Slider";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div className="container">
