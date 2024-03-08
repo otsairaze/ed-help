@@ -1,6 +1,6 @@
 import "./index.scss";
 import "macro-css";
-import Slider from "./Components/Slider";
+import Slider from "./Components/Slider/Slider";
 
 function App() {
   return (
@@ -131,6 +131,8 @@ function App() {
           </div>
         </section>
         <section className="advantages">
+          <img className="bg-img-2" src="./img/Background/2.png" alt="" />
+          <img className="bg-img-3" src="./img/Background/3.png" alt="" />
           <div className="advantages__highblock">
             <h3>Приемущества</h3>
             <p>То, что нас значительно отличает от других</p>
@@ -179,6 +181,88 @@ function App() {
             </p>
           </div>
           <Slider />
+          <div className="r-block">
+            <img className="bg-img-4" src="./img/Background/4.png" alt="" />
+            <p className="reviews__subtitle">
+              Если Вы хотите получить положительный результат от работы с нами,
+              вам следует ознакомиться с порядком работы
+            </p>
+          </div>
+        </section>
+      </div>
+      <section className="how">
+        <img className="how-ellipse-1" src="./img/How/ellipse-1.png" alt="" />
+        <div className="how__highblock">
+          <h3>Как мы работаем</h3>
+          <p>
+            Процесс, в результате которого вы<br></br> получаете
+            профессиональный результат
+          </p>
+        </div>
+        <div className="how__block">
+          <div className="how__card">
+            <div>
+              <img className="how-arrow-1" src="./img/How/arrow.png" alt="" />
+              <img className="pos-a how-1" src="./img/How/1.png" alt="" />
+            </div>
+            <h3>Материалы</h3>
+            <p>Предоставление материала для оказания услуги </p>
+          </div>
+          <div className="how__card">
+            <div>
+              <img className="how-arrow-2" src="./img/How/arrow.png" alt="" />
+              <img className="pos-a how-2" src="./img/How/2.png" alt="" />
+            </div>
+            <h3>Оценка</h3>
+            <p>Оценка стоимости услуги</p>
+          </div>
+          <div className="how__card">
+            <div>
+              <img className="how-arrow-3" src="./img/How/arrow.png" alt="" />
+              <img className="pos-a how-3" src="./img/How/3.png" alt="" />
+            </div>
+            <h3>Предоплата</h3>
+            <p>Внесение предоплаты 30%</p>
+          </div>
+          <div className="how__card">
+            <div>
+              <img className="how-arrow-4" src="./img/How/arrow.png" alt="" />
+              <img className="pos-a how-4" src="./img/How/4.png" alt="" />
+            </div>
+            <h3>Исполнение</h3>
+            <p>Исполнение указанной услуги</p>
+          </div>
+          <div className="how__card">
+            <div>
+              <img className="pos-a how-5" src="./img/How/5.png" alt="" />
+            </div>
+            <h3>Результат</h3>
+            <p>Получение результата и окончательный расчет</p>
+          </div>
+        </div>
+      </section>
+      <div className="container">
+        <section className="main-2">
+          <div>
+            <div className="left-mainsecond-block">
+              <h1>Что мы предлагаем?</h1>
+              <p>Димпломные, курсовые работы и .т.п</p>
+              <p>
+                Найдите ту услугу, которая вам необходима. Мы предложим то, в
+                чём разбираемся больше всего
+              </p>
+            </div>
+            <div></div>
+          </div>
+          <div className="input__block">
+            <input
+              className="first-input"
+              value="Введите задачу (прим. диплом/курсовая)"
+            />
+            <img className="input__arrow" src="./img/arrow.svg" alt="" />
+            <input className="second-input" placeholder="Телефон" />
+            <button>Узнать стоимость</button>
+          </div>
         </section>
       </div>
     </>

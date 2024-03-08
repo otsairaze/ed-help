@@ -207,7 +207,21 @@
     padding-block: 100px;
     padding-inline: 203px;
     background-color: #f8f6ff;
-    border-radius: 55px;
+    border-radius: 80px;
+    position: relative;
+    .bg-img-2 {
+      position: absolute;
+      z-index: -2;
+      left: -100px;
+      top: 220px;
+    }
+    .bg-img-3 {
+      position: absolute;
+      right: -100px;
+      bottom: -150px;
+      z-index: -2;
+    }
+
     .advantages__highblock {
       text-align: center;
       h3 {
@@ -274,6 +288,16 @@
   }
 
   .reviews {
+    .bg-img-4 {
+      position: absolute;
+      left: -210px;
+      top: -70px;
+    }
+
+    .r-block {
+      position: relative;
+    }
+
     .reviews-highblock {
       padding-top: 233px;
       text-align: center;
@@ -288,19 +312,245 @@
       }
     }
 
+    .reviews__subtitle {
+      text-align: center;
+      max-width: 635px;
+      margin: 0 auto;
+      font-size: 18px;
+      color: #6e3ff4;
+    }
+
     .card-block {
       box-shadow: 0px 17px 56px rgba(110, 63, 244, 0.1);
       border-radius: 44px;
       max-width: 764px;
-      padding-block: 70px;
-      padding-inline: 30px;
+      padding-block: 55px;
+      padding-inline: 132px;
       margin-top: 76px;
-      margin-left: 50px;
+      margin-left: 30px;
+      margin-bottom: 144px;
       h3 {
         max-width: 400px;
+        font-size: 22px;
+        color: #261163;
+        font-weight: 700;
       }
       p {
+        font-size: 18px;
+        color: #261163;
+        margin-top: 26px;
         max-width: 430px;
+      }
+      .slider__bottom-block {
+        margin-top: 60px;
+        position: relative;
+        img {
+          position: absolute;
+          right: -100px;
+          bottom: -10px;
+        }
+        p {
+          font-size: 16px;
+          color: #6e3ff4;
+        }
+      }
+    }
+
+    .card-block-second {
+      border-radius: 44px;
+      max-width: 764px;
+      display: flex;
+      flex-direction: column;
+
+      padding-block: 49px;
+      padding-inline: 132px;
+      margin-top: 76px;
+      margin-left: 50px;
+      background-image: url(../public/img/Slider/second-bg-video.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      .slider-block {
+        margin: 0 auto;
+        margin-top: 70px;
+        margin-bottom: 70px;
+      }
+      h3 {
+        font-size: 22px;
+        color: #fff;
+      }
+    }
+  }
+
+  .main-2 {
+    .left-mainsecond-block {
+      padding-top: 309px;
+      h1 {
+        font-size: 60px;
+        font-weight: 700;
+        color: #261163;
+      }
+      & + p {
+        color: #a7a7a7;
+        font-size: 18px;
+      }
+    }
+    .input__block {
+      background-color: #fff;
+      position: relative;
+      z-index: 10;
+      padding-block: 38px;
+      padding-inline: 33px;
+      margin-top: 90px;
+      box-shadow: 0px 17px 56px rgba(110, 63, 244, 0.2);
+      border-radius: 34px;
+      max-width: 1400px;
+      position: relative;
+
+      .first-input {
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 25px;
+        width: 552px;
+        padding-inline: 20px;
+        height: 92px;
+        font-size: 18px;
+        background-color: rgba(210, 210, 210, 50%);
+        color: #a7a7a7;
+        outline: none;
+      }
+      .second-input {
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 25px;
+        width: 370px;
+        height: 92px;
+        margin-left: 17px;
+        margin-right: 17px;
+        padding-inline: 20px;
+        font-size: 18px;
+        background-color: rgba(210, 210, 210, 50%);
+        color: #a7a7a7;
+        outline: none;
+      }
+      button {
+        padding-block: 36px;
+        padding-inline: 78px;
+        color: #fff;
+        font-weight: 600;
+        background-color: #ea36e3;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+      .input__arrow {
+        position: absolute;
+        top: 83px;
+        left: 580px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.how {
+  position: relative;
+  max-width: 1920px;
+  height: 793px;
+  background: #6e3ff4;
+  margin: 0 auto;
+  margin-top: 150px;
+  .how-ellipse-1 {
+    position: absolute;
+    bottom: 0;
+    right: 780px;
+  }
+  .how__highblock {
+    text-align: center;
+    padding-top: 131px;
+    h3 {
+      font-size: 42px;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 23px;
+    }
+    p {
+      font-size: 18px;
+      color: #ccbcfb;
+      font-weight: 400;
+      padding-bottom: 200px;
+      margin: 0 auto;
+    }
+  }
+  .how__block {
+    max-width: 1150px;
+    display: flex;
+    gap: 118px;
+    margin: 0 auto;
+    align-items: flex-start;
+    max-height: 237px;
+    .how__card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      .how-1 {
+        position: absolute;
+        top: -100px;
+        left: 10px;
+      }
+      .how-2 {
+        position: absolute;
+        top: -85px;
+        left: 15px;
+      }
+      .how-3 {
+        position: absolute;
+        top: -85px;
+        left: 25px;
+      }
+      .how-4 {
+        position: absolute;
+        top: -85px;
+        left: 25px;
+      }
+      .how-5 {
+        position: absolute;
+        top: -100px;
+        left: 10px;
+      }
+      .how-arrow-1 {
+        position: absolute;
+        top: -40px;
+        left: 150px;
+      }
+      .how-arrow-2 {
+        position: absolute;
+        top: -40px;
+        left: 130px;
+      }
+      .how-arrow-3 {
+        position: absolute;
+        top: -40px;
+        left: 145px;
+      }
+      .how-arrow-4 {
+        position: absolute;
+        top: -40px;
+        left: 145px;
+      }
+
+      h3 {
+        color: #fff;
+        margin-bottom: 14px;
+        margin-top: 49px;
+        font-size: 22px;
+      }
+      p {
+        color: #ccbcfb;
+        font-size: 16px;
+        max-width: 200px;
+        font-weight: 400;
+        text-align: center;
       }
     }
   }
