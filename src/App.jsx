@@ -286,9 +286,14 @@ function App() {
           </div>
           <div className="input__block">
             <input
+              onClick={() => setIsActive(!isActive)}
               className="first-input"
-              value="Введите задачу (прим. диплом/курсовая)"
+              value={select}
             />
+            <div className={isActive === true ? "active" : "dropdown"}>
+              <p onClick={() => setSelect("1")}>1</p>
+              <p>2</p>
+            </div>
             <img className="input__arrow" src="./img/arrow.svg" alt="" />
             <input className="second-input" placeholder="Телефон" />
             <button>Узнать стоимость</button>
@@ -298,8 +303,8 @@ function App() {
           <img className="bg-img-2" src="./img/Cost/1.png" alt="" />
           <img className="bg-img-3" src="./img/Cost/2.png" alt="" />
           <div className="advantages__highblock">
-            <h3>Приемущества</h3>
-            <p>То, что нас значительно отличает от других</p>
+            <h3>Сколько стоит?</h3>
+            <p>ТУзнайте из чего складывается стоимость работы</p>
           </div>
           <div className="advantages__grid-card">
             <div className="card-1 grid-card">
@@ -447,10 +452,101 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div></div>
             </div>
           </div>
         </section>
+        <section className="uniqueness">
+          <div>
+            <div className="input__block">
+              <div className="input__hightitle">
+                <h3>Уникальность работы</h3>
+                <p>
+                  Мы вышлем гайд по повышению уникальности в разных системах
+                  проверки
+                </p>
+              </div>
+              <div className="input__m-block">
+                <input className="first-input" placeholder="Имя" />
+                <img className="input__arrow" src="./img/arrow.svg" alt="" />
+                <input
+                  className="second-input"
+                  placeholder="Введите вашу почту"
+                />
+                <button>Отправить</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer className="footer">
+          <img
+            className="footer-bg-1"
+            src="./img/Footer/footer-bg-1.png"
+            alt=""
+          />
+
+          <div className="footer__wrapper">
+            <div className="d-flex align-center justify-between footer__highblock">
+              <div className="d-flex footer__highleft-block">
+                <p>+7 (903) 543-01-89</p>
+                <p>info@edhelp.ru</p>
+              </div>
+              <div className="footer__highright-block">
+                <img src="./img/Footer/icon-1.png" alt="" />
+                <img src="./img/Footer/icon-2.png" alt="" />
+                <img src="./img/Footer/icon-3.png" alt="" />
+                <img src="./img/Footer/icon-4.png" alt="" />
+              </div>
+            </div>
+            <div className="footer__bottomblock d-flex justify-between">
+              <div>
+                <div className="d-flex align-center logo__block">
+                  <img src="./img/Footer/logo.svg" alt="" />
+                  <p className="logo__text">Ed-Help</p>
+                </div>
+                <p>
+                  Сервис подготовки студентов к написанию дипломных, курсовых и
+                  иных типов работ, необходимых для сдачи
+                </p>
+              </div>
+              <div>
+                <ul className="d-flex flex-column column-block">
+                  <li>
+                    <span>Сервис</span>
+                  </li>
+                  <li>О нас</li>
+                  <li>Отзывы</li>
+                  <li>Услуги</li>
+                  <li>Связаться</li>
+                </ul>
+              </div>
+              <div>
+                <ul className="d-flex flex-column column-block">
+                  <li>
+                    <span>Документы</span>
+                  </li>
+                  <li>Договор начала работ</li>
+                  <li>Прайс лист</li>
+                  <li>Договор Оферты</li>
+                  <li>Политика конфиденциальности</li>
+                </ul>
+              </div>
+              <div>
+                <ul className="d-flex flex-column column-block">
+                  <li>
+                    <span>Ссылки</span>
+                  </li>
+                  <li>Уникальность работы</li>
+                  <li>Курсовые</li>
+                  <li>Дипломные</li>
+                  <li>Все статьи</li>
+                </ul>
+              </div>
+            </div>
+            <div className="footer__copyright">
+              <p>© Все права защищены 2020-2021</p>
+            </div>
+          </div>
+        </footer>
       </div>
     </>
   );

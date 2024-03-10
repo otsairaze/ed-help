@@ -7,6 +7,17 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.dropdown {
+  display: none;
+}
+
+.active {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .container {
   max-width: 1500px;
   margin: 0 auto;
@@ -497,10 +508,11 @@
     background-color: #fff;
     border-radius: 80px;
     position: relative;
+    top: 70px;
     box-shadow: 0px -4px 102px rgba(110, 63, 244, 0.15);
     .bg-img-2 {
       position: absolute;
-      z-index: -2;
+      z-index: -1;
       left: -100px;
       top: -200px;
     }
@@ -508,7 +520,7 @@
       position: absolute;
       right: -60px;
       bottom: 500px;
-      z-index: -2;
+      z-index: -1;
     }
 
     .advantages__highblock {
@@ -553,12 +565,13 @@
   }
 
   .guarantees {
+    height: 800px;
     padding-top: 309px;
     position: relative;
     .bg-1 {
       position: absolute;
-      bottom: -600px;
-      left: -210px;
+      bottom: -250px;
+      left: -310px;
     }
 
     .guarantees__wrapper {
@@ -635,6 +648,156 @@
       font-size: 18px;
       color: #261163;
       margin-top: 49px;
+    }
+  }
+
+  .uniqueness {
+    .input__block {
+      position: relative;
+      background-color: #f8f6ff;
+      z-index: 10;
+      padding-block: 38px;
+      padding-inline: 33px;
+      margin-top: 90px;
+      box-shadow: 0px 17px 56px rgba(110, 63, 244, 0.2);
+      border-radius: 100px;
+      padding-bottom: 108px;
+
+      .input__hightitle {
+        text-align: center;
+        h3 {
+          padding-top: 80px;
+          font-size: 42px;
+          color: #261163;
+        }
+        p {
+          padding-bottom: 70px;
+          color: #a7a7a7;
+          font-size: 18px;
+          margin-top: 22px;
+        }
+      }
+      .dropdown {
+        display: none;
+      }
+
+      .active {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .input__m-block {
+        text-align: center;
+        .first-input {
+          border: 1px solid hsl(0, 0%, 80%);
+          border-radius: 25px;
+          width: 189px;
+          padding-inline: 20px;
+          height: 92px;
+          font-size: 18px;
+          color: #a7a7a7;
+          outline: none;
+        }
+        .second-input {
+          border: 1px solid hsl(0, 0%, 80%);
+          border-radius: 25px;
+          width: 532px;
+          height: 92px;
+          margin-left: 17px;
+          margin-right: 17px;
+          padding-inline: 20px;
+          font-size: 18px;
+
+          color: #a7a7a7;
+          outline: none;
+        }
+        button {
+          padding-block: 36px;
+          padding-inline: 78px;
+          color: #fff;
+          font-weight: 600;
+          background-color: #ea36e3;
+          border: none;
+          border-radius: 25px;
+          cursor: pointer;
+          font-size: 18px;
+        }
+        .input__arrow {
+          position: absolute;
+          top: 83px;
+          left: 580px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .footer {
+    color: #a8a0c1;
+    position: relative;
+    .footer-bg-1 {
+      position: absolute;
+      top: -480px;
+      left: -220px;
+      z-index: -1;
+    }
+    .footer__wrapper {
+      margin-top: 205px;
+
+      .footer__highblock {
+        padding-bottom: 73px;
+        border-bottom: 1px solid #675892;
+        .footer__highleft-block {
+          gap: 51px;
+          color: #fff;
+          p {
+            font-size: 30px;
+            font-weight: 400;
+          }
+        }
+
+        .footer__highright-block {
+          display: flex;
+          gap: 24px;
+        }
+      }
+
+      .footer__bottomblock {
+        padding-bottom: 73px;
+        border-bottom: 1px solid #675892;
+        .logo__block {
+          margin-bottom: 12px;
+          .logo__text {
+            font-size: 30px;
+            color: #fff;
+            margin-left: 20px;
+          }
+        }
+
+        .column-block {
+          gap: 18px;
+
+          span {
+            color: #fff;
+            font-size: 22px;
+          }
+        }
+        padding-top: 117px;
+        p {
+          max-width: 300px;
+        }
+        li {
+          max-width: 170px;
+        }
+      }
+
+      .footer__copyright {
+        text-align: center;
+        margin-top: 61px;
+        font-size: 18px;
+        color: #a8a0c1;
+      }
     }
   }
 }
@@ -747,7 +910,7 @@
 }
 
 .lets__start {
-  z-index: 1;
+  z-index: -1;
   position: relative;
   max-width: 1920px;
   height: 724px;
