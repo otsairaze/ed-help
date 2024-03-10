@@ -11,24 +11,72 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const [isActive, setIsActive] = useState(false);
   const [select, setSelect] = useState("Тип");
+
+  const main = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".main",
+      start: "0% 50%",
+    },
+  });
+
   const values = gsap.timeline({
     scrollTrigger: {
       trigger: ".values",
-
       start: "10% 50%",
     },
   });
   const advantages = gsap.timeline({
     scrollTrigger: {
       trigger: ".advantages",
+      start: "17% 50%",
+    },
+  });
+  const reviews = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".reviews",
+      start: "30% 50%",
+    },
+  });
+
+  const how = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".how",
+
+      start: "40% 50%",
+    },
+  });
+
+  const secondmain = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".second__main",
+
+      start: "50% 50%",
+    },
+  });
+
+  const cost = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".cost",
+      start: "60% 70%",
+    },
+  });
+
+  const guarantees = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".guarantees",
       markers: true,
-      start: "20% 50%",
+      start: "75% 80%",
     },
   });
 
   const appRef = useRef(null);
   const appValues = useRef(null);
   const appAdvantages = useRef(null);
+  const appReviews = useRef(null);
+  const appHow = useRef(null);
+  const appSecondMain = useRef(null);
+  const appCost = useRef(null);
+  const appGuarantees = useRef(null);
 
   useLayoutEffect(() => {
     gsap.context(() => {
@@ -170,22 +218,208 @@ function App() {
       advantages
         .from(".advantages__highblock", {
           opacity: 0,
-          duration: 0.8,
-          delay: 1,
+          duration: 0.2,
+          delay: 0.5,
+        })
+        .from(".grid-subtitle", {
+          opacity: 0,
+          duration: 0.2,
+          delay: 0.5,
         })
         .from(
-          "grid-card",
+          ".grid-card",
           {
             opacity: 0,
-            duration: 0.8,
-            delay: 1,
+            duration: 0.2,
+            delay: 0.7,
             y: 50,
-            stagger: 0.6,
+            stagger: 0.4,
           },
-          0.8
+          0.2
         );
     });
   }, appAdvantages);
+
+  useLayoutEffect(() => {
+    gsap.context(() => {
+      reviews
+        .from(".reviews-highblock", {
+          opacity: 0,
+          duration: 0.2,
+          delay: 0.7,
+          y: -50,
+        })
+        .from(".slider-anim", {
+          opacity: 0,
+          duration: 0.2,
+          delay: 0.4,
+          x: -50,
+        });
+    });
+  }, appReviews);
+
+  useLayoutEffect(() => {
+    gsap.context(() => {
+      how
+        .from(".how__highblock", {
+          opacity: 0,
+          duration: 0.2,
+          delay: 0.4,
+          y: -50,
+        })
+        .from(".how__card", {
+          opacity: 0,
+          duration: 0.2,
+          delay: 0.4,
+          x: -50,
+        })
+        .from(
+          ".how-1",
+          {
+            opacity: 0,
+            duration: 0.2,
+            delay: 0.4,
+            x: -50,
+          },
+          0.8
+        )
+        .from(".how-arrow-1", {
+          opacity: 0,
+          duration: 0.2,
+          delay: 0.4,
+          x: -50,
+        })
+        .from(
+          ".how-2",
+          {
+            opacity: 0,
+            duration: 0.2,
+            delay: 0.6,
+            x: -50,
+          },
+          1.6
+        )
+
+        .from(".how-arrow-2", {
+          opacity: 0,
+          duration: 0.3,
+          delay: 0.4,
+          x: -50,
+        })
+        .from(
+          ".how-3",
+          {
+            opacity: 0,
+            duration: 0.2,
+            delay: 0.8,
+            x: -50,
+          },
+          2.6
+        )
+        .from(".how-arrow-3", {
+          opacity: 0,
+          duration: 0.3,
+          delay: 0.4,
+          x: -50,
+        })
+        .from(
+          ".how-4",
+          {
+            opacity: 0,
+            duration: 0.2,
+            delay: 1,
+            x: -50,
+          },
+          3.5
+        )
+        .from(".how-arrow-4", {
+          opacity: 0,
+          duration: 0.3,
+          delay: 0.4,
+          x: -50,
+        })
+        .from(
+          ".how-5",
+          {
+            opacity: 0,
+            duration: 0.2,
+            delay: 1.2,
+            x: -50,
+          },
+          4.5
+        );
+    });
+  }, appHow);
+
+  useLayoutEffect(() => {
+    gsap.context(() => {
+      secondmain
+        .from(".left-mainsecond", {
+          opacity: 0,
+          duration: 0.5,
+          delay: 0.5,
+          x: -300,
+        })
+        .from(".right-mainsecond-block", {
+          opacity: 0,
+          duration: 0.5,
+          delay: 0.5,
+          x: 300,
+        });
+    });
+  }, appSecondMain);
+
+  useLayoutEffect(() => {
+    gsap.context(() => {
+      cost
+        .from(".cost__highblock", {
+          opacity: 0,
+          duration: 0.2,
+          delay: 0.5,
+        })
+        .from(".grid-subtitle", {
+          opacity: 0,
+          duration: 0.2,
+          delay: 0.5,
+        })
+        .from(
+          ".cost-grid-card",
+          {
+            opacity: 0,
+            duration: 0.2,
+            delay: 0.7,
+            y: 50,
+            stagger: 0.4,
+          },
+          0.2
+        );
+    });
+  }, appCost);
+
+  useLayoutEffect(() => {
+    gsap.context(() => {
+      guarantees
+        .from(
+          ".guarantees-title",
+          {
+            opacity: 0,
+            duration: 0.4,
+            x: -20,
+          },
+          0.4
+        )
+        .from(
+          ".guarantees-subtitle",
+          {
+            opacity: 0,
+            duration: 0.4,
+
+            x: -20,
+          },
+          0.6
+        );
+    });
+  }, appGuarantees);
 
   return (
     <>
@@ -377,7 +611,7 @@ function App() {
             <p> Наши преимущества подтверждаются отношениями с клиентами </p>
           </div>
         </section>
-        <section className="reviews">
+        <section className="reviews" ref={appReviews}>
           <div className="reviews-highblock">
             <h3>Отзывы студентов</h3>
             <p>
@@ -407,7 +641,11 @@ function App() {
           <div className="how__card">
             <div>
               <img className="how-arrow-1" src="./img/How/arrow.png" alt="" />
-              <img className="pos-a how-1" src="./img/How/1.png" alt="" />
+              <img
+                className="pos-a how-1 how-anim"
+                src="./img/How/1.png"
+                alt=""
+              />
             </div>
             <h3>Материалы</h3>
             <p>Предоставление материала для оказания услуги </p>
@@ -423,7 +661,11 @@ function App() {
           <div className="how__card">
             <div>
               <img className="how-arrow-3" src="./img/How/arrow.png" alt="" />
-              <img className="pos-a how-3" src="./img/How/3.png" alt="" />
+              <img
+                className="pos-a how-3  how-anim"
+                src="./img/How/3.png"
+                alt=""
+              />
             </div>
             <h3>Предоплата</h3>
             <p>Внесение предоплаты 30%</p>
@@ -431,14 +673,22 @@ function App() {
           <div className="how__card">
             <div>
               <img className="how-arrow-4" src="./img/How/arrow.png" alt="" />
-              <img className="pos-a how-4" src="./img/How/4.png" alt="" />
+              <img
+                className="pos-a how-4  how-anim"
+                src="./img/How/4.png"
+                alt=""
+              />
             </div>
             <h3>Исполнение</h3>
             <p>Исполнение указанной услуги</p>
           </div>
           <div className="how__card">
             <div>
-              <img className="pos-a how-5" src="./img/How/5.png" alt="" />
+              <img
+                className="pos-a how-5  how-anim"
+                src="./img/How/5.png"
+                alt=""
+              />
             </div>
             <h3>Результат</h3>
             <p>Получение результата и окончательный расчет</p>
@@ -446,8 +696,8 @@ function App() {
         </div>
       </section>
       <div className="container">
-        <section className="main-2">
-          <div className="d-flex">
+        <section className="second__main" ref={appSecondMain}>
+          <div className="d-flex left-mainsecond">
             <div className="left-mainsecond-block">
               <h1>Что мы предлагаем?</h1>
               <p className="left-mainsecond-title">
@@ -494,12 +744,12 @@ function App() {
         <section className="cost">
           <img className="bg-img-2" src="./img/Cost/1.png" alt="" />
           <img className="bg-img-3" src="./img/Cost/2.png" alt="" />
-          <div className="advantages__highblock">
+          <div className="cost__highblock">
             <h3>Сколько стоит?</h3>
             <p>ТУзнайте из чего складывается стоимость работы</p>
           </div>
-          <div className="advantages__grid-card">
-            <div className="card-1 grid-card">
+          <div className="cost-card">
+            <div className="card-1 cost-grid-card">
               <img src="./img/Cost/icon-1.png" alt="" />
               <h3>Тип работ</h3>
               <p>
@@ -507,31 +757,31 @@ function App() {
                 т.п.)
               </p>
             </div>
-            <div className="grid-card card-2">
+            <div className="cost-grid-card card-2">
               <img src="./img/Cost/icon-2.png" alt="" />
               <h3>Сроки</h3>
               <p>Чем больше срок - тем дешевле будет работа</p>
             </div>
-            <div className="grid-card card-3">
+            <div className="cost-grid-card card-3">
               <img src="./img/Cost/icon-3.png" alt="" />
               <h3>Уникальность</h3>
               <p>
                 Взависимости от того, насколько уникальный проект вам необходим
               </p>
             </div>
-            <div className="grid-card card-4">
+            <div className="cost-grid-card card-4">
               <img src="./img/Cost/icon-4.png" alt="" />
               <h3>Объём работ</h3>
               <p>Количество страниц напрямую зависит на стоимость</p>
             </div>
-            <div className="grid-card card-5">
+            <div className="cost-grid-card card-5">
               <img src="./img/Cost/icon-5.png" alt="" />
               <h3>Тема работы</h3>
               <p>
                 Если работа имеет узкую направленность, то стоимость будет выше
               </p>
             </div>
-            <div className="grid-card card-6">
+            <div className="cost-grid-card card-6">
               <img src="./img/Cost/icon-6.png" alt="" />
               <h3>Вуз</h3>
               <p>

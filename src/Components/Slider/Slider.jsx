@@ -59,7 +59,7 @@ const Slider = () => {
       onSwiper={(swiper) => console.log(swiper)}
     >
       {firstSlider.map((item, index) => (
-        <SwiperSlide>
+        <SwiperSlide className="slider-anim">
           {index % 2 == 0 ? (
             <SliderCardFirst
               title={item.title}

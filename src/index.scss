@@ -402,7 +402,7 @@
     }
   }
 
-  .main-2 {
+  .second__main {
     .left-mainsecond-block {
       padding-top: 309px;
       h1 {
@@ -523,7 +523,7 @@
       z-index: -1;
     }
 
-    .advantages__highblock {
+    .cost__highblock {
       text-align: center;
       h3 {
         font-size: 42px;
@@ -534,14 +534,14 @@
         color: #a7a7a7;
       }
     }
-    .advantages__grid-card {
+    .cost-card {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-row-gap: 40px;
       grid-column-gap: 92px;
       padding-top: 73px;
 
-      .grid-card {
+      .cost-grid-card {
         padding-block: 70px;
         padding-inline: 36px;
         max-width: 274px;
