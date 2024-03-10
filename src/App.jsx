@@ -1,11 +1,191 @@
+import React, { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./index.scss";
 import "macro-css";
 import Slider from "./Components/Slider/Slider";
 import { useState } from "react";
 
+gsap.registerPlugin(ScrollTrigger);
+
 function App() {
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
   const [select, setSelect] = useState("Тип");
+  const values = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".values",
+
+      start: "10% 50%",
+    },
+  });
+  const advantages = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".advantages",
+      markers: true,
+      start: "20% 50%",
+    },
+  });
+
+  const appRef = useRef(null);
+  const appValues = useRef(null);
+  const appAdvantages = useRef(null);
+
+  useLayoutEffect(() => {
+    gsap.context(() => {
+      gsap.from(".left__main-block-anim", {
+        opacity: 0,
+        duration: 1,
+        delay: 0.5,
+        x: -300,
+      });
+      gsap.from(".right__img", {
+        opacity: 0,
+        duration: 1,
+        delay: 0.5,
+        x: 300,
+      });
+      gsap.from(".input__block", {
+        opacity: 0,
+        duration: 1,
+        delay: 1,
+        y: 40,
+      });
+    });
+  }, appRef);
+
+  useLayoutEffect(() => {
+    gsap.context(() => {
+      values
+        .from(
+          ".values__pos-a-2",
+          {
+            opacity: 0,
+            duration: 0.8,
+            y: -40,
+            x: 40,
+          },
+          0.4
+        )
+        .from(
+          ".values__pos-a-5",
+          {
+            opacity: 0,
+            duration: 0.8,
+            x: 40,
+          },
+          0.6
+        )
+        .from(
+          ".values__pos-a-6",
+          {
+            opacity: 0,
+            duration: 0.8,
+            y: 20,
+            x: 10,
+          },
+          0.8
+        )
+        .from(
+          ".values__pos-a-4",
+          {
+            opacity: 0,
+            duration: 0.4,
+            y: 10,
+            x: -20,
+          },
+          1
+        )
+        .from(
+          ".values__pos-a-3",
+          {
+            opacity: 0,
+            duration: 0.4,
+            x: -20,
+          },
+          1.2
+        )
+        .from(
+          ".values__pos-a-1",
+          {
+            opacity: 0,
+            duration: 0.4,
+            y: -20,
+            x: -40,
+          },
+          1.4
+        )
+        .from(
+          ".values__right-title",
+          {
+            opacity: 0,
+            duration: 0.4,
+
+            x: -20,
+          },
+          0.4
+        )
+
+        .from(
+          ".values__right-subtitle",
+          {
+            opacity: 0,
+            duration: 0.4,
+
+            x: -20,
+          },
+          0.6
+        )
+
+        .from(
+          ".values-img",
+          {
+            opacity: 0,
+            duration: 0.4,
+            x: -20,
+            stagger: 0.6,
+          },
+          0.8
+        )
+        .from(
+          ".value__right-textblock",
+          {
+            opacity: 0,
+            duration: 0.4,
+            x: -10,
+            stagger: 0.6,
+          },
+          1.2
+        )
+        .from(".our__value-text", {
+          opacity: 0,
+          duration: 0.4,
+          x: -20,
+          stagger: 0.6,
+        });
+    });
+  }, appValues);
+
+  useLayoutEffect(() => {
+    gsap.context(() => {
+      advantages
+        .from(".advantages__highblock", {
+          opacity: 0,
+          duration: 0.8,
+          delay: 1,
+        })
+        .from(
+          "grid-card",
+          {
+            opacity: 0,
+            duration: 0.8,
+            delay: 1,
+            y: 50,
+            stagger: 0.6,
+          },
+          0.8
+        );
+    });
+  }, appAdvantages);
 
   return (
     <>
@@ -20,13 +200,13 @@ function App() {
               <li>О нас</li>
               <li>Отзывы</li>
               <li>Услуги</li>
-              <button>Связаться</button>
+              <button className="nav__button">Связаться</button>
             </ul>
           </div>
         </nav>
-        <section className="main">
+        <section className="main" ref={appRef}>
           <div className="d-flex justify-between left__main-block">
-            <div>
+            <div className="left__main-block-anim">
               <h1>Помогаем всем студентами</h1>
               <p className="left__main-block-p">
                 Димпломные, курсовые работы и .т.п
@@ -60,7 +240,7 @@ function App() {
             <button>Подать заявку</button>
           </div>
         </section>
-        <section className="values">
+        <section className="values" ref={appValues}>
           <img className="bg-img-1" src="./img/Background/1.png" alt="" />
           <div className="d-flex justify-between">
             <div className="values__left-block">
@@ -105,7 +285,11 @@ function App() {
               <div className="values__right-block">
                 <div className="d-flex align-center">
                   <div>
-                    <img src="./img/Value/r-1.svg" alt="" />
+                    <img
+                      className="values-img"
+                      src="./img/Value/r-1.svg"
+                      alt=""
+                    />
                   </div>
                   <div className="value__right-textblock">
                     <h3>Мы всегдо открыты</h3>
@@ -114,7 +298,11 @@ function App() {
                 </div>
                 <div className="d-flex align-center">
                   <div>
-                    <img src="./img/Value/r-2.svg" alt="" />
+                    <img
+                      className="values-img"
+                      src="./img/Value/r-2.svg"
+                      alt=""
+                    />
                   </div>
                   <div className="value__right-textblock">
                     <h3>Задача-Решение</h3>
@@ -123,7 +311,11 @@ function App() {
                 </div>
                 <div className="d-flex align-center">
                   <div>
-                    <img src="./img/Value/r-3.svg" alt="" />
+                    <img
+                      className="values-img"
+                      src="./img/Value/r-3.svg"
+                      alt=""
+                    />
                   </div>
                   <div className="value__right-textblock">
                     <h3>Жить сейчас</h3>
@@ -142,7 +334,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="advantages">
+        <section className="advantages" ref={appAdvantages}>
           <img className="bg-img-2" src="./img/Background/2.png" alt="" />
           <img className="bg-img-3" src="./img/Background/3.png" alt="" />
           <div className="advantages__highblock">
