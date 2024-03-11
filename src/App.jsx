@@ -5,6 +5,7 @@ import "./index.scss";
 import "macro-css";
 import Slider from "./Components/Slider/Slider";
 import { useState } from "react";
+import Modal from "./Components/Modal/Modal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,7 +65,7 @@ function App() {
   const guarantees = gsap.timeline({
     scrollTrigger: {
       trigger: ".guarantees",
-      markers: true,
+
       start: "75% 80%",
     },
   });
@@ -421,6 +422,8 @@ function App() {
     });
   }, appGuarantees);
 
+  const [modalActive, setModalActive] = useState(false);
+
   return (
     <>
       <div className="container">
@@ -471,7 +474,7 @@ function App() {
             </div>
             <img className="input__arrow" src="./img/arrow.svg" alt="" />
             <input className="second-input" placeholder="Твой email" />
-            <button>Подать заявку</button>
+            <button onClick={() => setModalActive(true)}>Подать заявку</button>
           </div>
         </section>
         <section className="values" ref={appValues}>
@@ -919,6 +922,7 @@ function App() {
             </div>
           </div>
         </section>
+        <Modal active={modalActive} setActive={setModalActive} />
         <footer className="footer">
           <img
             className="footer-bg-1"

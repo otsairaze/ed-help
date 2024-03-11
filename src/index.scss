@@ -18,6 +18,32 @@
   left: 0;
 }
 
+.modal {
+  height: 1000vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  transform: scale(0);
+}
+
+.modal__content {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: white;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  z-index: 1000;
+}
+
+.active {
+  transform: scale(1);
+}
+
 .container {
   max-width: 1500px;
   margin: 0 auto;
@@ -71,7 +97,7 @@
     .right__img-block {
       .right__img {
         right: 0;
-        z-index: 2;
+        z-index: 1;
         top: -147px;
       }
       .right__bg {
